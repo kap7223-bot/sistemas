@@ -1,0 +1,64 @@
+---
+title: "PC1-1"
+Integrantes:
+MARÍA LUCIA JACOBO ATUNCAR
+GAMBOA CANALES MARIPAZ
+ARIANA ABIGIAL VIDAL ROMUCHO
+FERNANDA GIANELLA CASTILLA SALVADOR
+SEBASTIAN PALOMINO ROJAS
+KRISTY STEFANY ALVAREZ PEVES
+format: html
+editor: visual
+---
+
+```{r}
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("lubridate")
+install.packages("tidyr")
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(tidyr)
+```
+
+```{r}
+data_cirrosis = import(here("data","cirrosis.cvs"))
+```
+
+```{r}
+#DATOS DE EJEMPLO ggplot2:
+data<- data.frame (
+  x=c(1,2,3,4,5),
+  y= c(3,5,2,8,7))
+#graficos de dispercion
+ggplot(data,aes(x=x, y=y))+
+  geom_point()+
+  labs(title ="graficos de dispercion",x= "Eje x", y="Eje y")
+```
+
+```{r}
+#tabla de ejemplo
+data<- data.frame (
+  nombre = c("Andrea","Luis","Sofia"),
+  edad = c(21, 30, 25))
+```
+
+```{r}
+#uso de dplyr para filtrar
+filter(data, edad>22)
+```
+
+```{r}
+fecha <-ymd("2025-04-14")
+year(fecha)
+month(fecha)
+day(fecha)
+```
+
+```{r}
+head(cirrosis)
+```
